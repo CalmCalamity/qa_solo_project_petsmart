@@ -1,0 +1,31 @@
+{
+  "name": "qa_group_project_best_buy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "jest.config.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^26.0.15",
+    "@types/selenium-webdriver": "^4.0.16",
+    "chromedriver": "^94.0.0",
+    "geckodriver": "^2.0.4",
+    "jest": "^26.6.3",
+    "selenium-webdriver": "^4.0.0",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CalmCalamity/qa_group_project_best_buy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CalmCalamity/qa_group_project_best_buy/issues"
+  },
+  "homepage": "https://github.com/CalmCalamity/qa_group_project_best_buy#readme"
+}
