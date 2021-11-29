@@ -6,12 +6,12 @@ export class BasePage {
     url: string;
 
     constructor(driver, url) {
-        this.driver = driver
-        this.url = url
+        this.driver = driver;
+        this.url = url;
     }
 
     async navigate(): Promise<void> {
-        return await this.driver.get(this.url)
+        return await this.driver.get(this.url);
     }
 
     /**
@@ -30,6 +30,8 @@ export class BasePage {
      * @param {By} elementBy - the locator for the element to click
      */
     async click(elementBy: By) {
+        await this.driver.wait(until.elementLocated(elementBy));
+        await this.driver.wait(until.elementIsVisible(await this.driver.findElement(elementBy)));
         return (await this.getElement(elementBy)).click();
     }
 

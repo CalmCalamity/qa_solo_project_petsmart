@@ -1,15 +1,15 @@
-import { BestBuyPage } from "../PetsmartPage";
+import { PetsmartPage } from "../PetsmartPage";
 import { WebDriver, Builder, Capabilities } from "selenium-webdriver";
 
 const driver: WebDriver = new Builder()
   .withCapabilities(Capabilities.chrome())
   .build();
-const page = new BestBuyPage(driver);
+const page = new PetsmartPage(driver);
 
 // variables for tests
-const searchQuery: string = "fish";
+const searchQuery: string = "cat tree";
 
-describe("BestBuy Search Tests", () => {
+describe("Search Tests", () => {
   // Before tests open the page and close the popup
   beforeAll(async () => {
     await page.navigate();
@@ -24,4 +24,6 @@ describe("BestBuy Search Tests", () => {
     await page.doSearch(searchQuery);
     expect(await page.getResults()).toContain(searchQuery);
   }, 60000);
+
+  // if time allows add a test to search key single word phrases
 });
