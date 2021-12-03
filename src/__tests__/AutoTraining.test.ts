@@ -31,9 +31,9 @@ describe("Training Tests", () => {
         await page.click(training);
         expect(await page.getText(page.landingTitle)).toContain("Dog Training");
         try {
-          await page.click(storeLocator);
-        } catch {
           await page.click(storeLocatorSelect);
+        } catch {
+          await page.click(storeLocator);
         }
         await page.click(storeLocatorCurrent);
         await page.click(storeClosest);
