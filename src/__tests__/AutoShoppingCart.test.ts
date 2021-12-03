@@ -7,7 +7,7 @@ const driver: WebDriver = new Builder()
 const page = new PetsmartPage(driver);
 
 // variables for tests
-const searchQuery1: string = "cat dish";
+const searchQuery1: string = "cat bed";
 const searchQuery2: string = "dog collar";
 
 let product1: string = null;

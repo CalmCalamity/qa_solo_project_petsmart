@@ -7,7 +7,8 @@ const driver: WebDriver = new Builder()
 const page = new PetsmartPage(driver);
 
 const training = By.xpath("(//img [@class='home__mobile-service-icon'])[4]");
-const storeLocator = By.className("store-locator__select");
+const storeLocator = By.className("store-locator__change");
+const storeLocatorSelect = By.className("store-locator__select");
 const storeLocatorCurrent = By.className("store-locator__search-current-location");
 const storeClosest = By.xpath("(//a [@class='store-locator__result-link'])[1]");
 const availibility = By.className("styleguide__primary-cta training__cta ");
@@ -29,7 +30,11 @@ describe("Training Tests", () => {
         await page.openServices();
         await page.click(training);
         expect(await page.getText(page.landingTitle)).toContain("Dog Training");
-        await page.click(storeLocator);
+        try {
+          await page.click(storeLocatorSelect);
+        } catch {
+          await page.click(storeLocator);
+        }
         await page.click(storeLocatorCurrent);
         await page.click(storeClosest);
         await page.click(availibility);
