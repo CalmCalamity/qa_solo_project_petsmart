@@ -14,7 +14,7 @@ const age  = By.xpath("//*[@id='react-select-3--value']/div[2]/input");
 const submit = By.className("styleguide__primary-cta grooming__cta ");
 const book = By.xpath("(//button [@class='styleguide__primary-cta styleguide__secondary-cta'])[1]");
 
-describe("Search Tests", () => {
+describe("Grooming Tests", () => {
     // Before tests open the page and close the popup
     beforeAll(async () => {
       await page.navigate();
@@ -24,8 +24,8 @@ describe("Search Tests", () => {
       await driver.quit();
     });
   
-    // Test that runs a basic search
-    test("Simple Search Test", async () => {
+    // Test that schedules a grooming
+    test("Grooming Test", async () => {
       await page.openServices();
       await page.click(grooming);
       expect(await page.getText(page.landingTitle)).toContain("Grooming Salon");

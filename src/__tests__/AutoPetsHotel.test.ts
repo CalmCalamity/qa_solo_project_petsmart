@@ -12,7 +12,7 @@ const storeLocatorCurrent = By.className("store-locator__search-current-location
 const storeClosest = By.xpath("(//a [@class='store-locator__result-link'])[1]");
 const book = By.className("styleguide__button-content pets-hotel__check-rates-text");
 
-describe("Search Tests", () => {
+describe("PetsHotel Tests", () => {
     // Before tests open the page and close the popup
     beforeAll(async () => {
       await page.navigate();
