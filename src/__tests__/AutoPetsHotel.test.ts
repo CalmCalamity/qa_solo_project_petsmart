@@ -8,6 +8,7 @@ const page = new PetsmartPage(driver);
 
 const petsHotel = By.xpath("(//img [@class='home__mobile-service-icon'])[2]");
 const storeLocator = By.className("store-locator__change");
+const storeLocatorSelect = By.className("store-locator__select");
 const storeLocatorCurrent = By.className("store-locator__search-current-location");
 const storeClosest = By.xpath("(//a [@class='store-locator__result-link'])[1]");
 const book = By.className("styleguide__button-content pets-hotel__check-rates-text");
@@ -27,7 +28,11 @@ describe("PetsHotel Tests", () => {
         await page.openServices();
         await page.click(petsHotel);
         expect(await page.getText(page.landingTitle)).toContain("PetsHotel Pet Boarding");
-        await page.click(storeLocator);
+        try {
+          await page.click(storeLocator);
+        } catch {
+          await page.click(storeLocatorSelect);
+        }
         await page.click(storeLocatorCurrent);
         await page.click(storeClosest);
         // unable to get working code to submit a date with the format the site uses
