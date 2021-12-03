@@ -42,21 +42,10 @@ describe("Shopping Cart Tests", () => {
 
     // Test that runs removes an item from the cart
     // Continues from the previous test
-    // test("Remove From Cart Test", async () => {
-    //     expect(sku2).not.toBeNull();
-
-    //     await page.cartRemove();
-
-    //     expect(await page.getText(page.shoppingCartList)).not.toContain(sku2);
-    // }, 60000);
-
-    // // Test that saves an item in the cart for later
-    // // Continues from the previous test
-    // test("Save For Later Cart Test", async () => {
-    //     expect(sku1).not.toBeNull();
-        
-    //     await page.cartSaveForLater();
-
-    //     expect(await page.getText(page.cartSavedList)).toContain(sku1);
-    // }, 60000);
+    test("Remove From Cart Test", async () => {
+        expect(product1).not.toBeNull();
+        expect(product2).not.toBeNull();
+        await page.cartRemove();
+        expect(await page.getText(page.shoppingCartList)).not.toContain(product1);
+    }, 60000);
 });
